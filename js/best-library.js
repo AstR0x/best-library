@@ -30,3 +30,35 @@ function arrayOfRandomUniqueNumber(amount, max, min = 0, uniq = false) {
   }
   return arrayOfRandomUniqueNumber;
 }
+
+
+function sortNumbers(array) {
+  array.sort((a, b) => {
+    if (a > b) return 1;
+    if (a < b) return -1;
+  });
+  return array;
+}
+
+//функция создания массива
+function newArray(amount, type) {
+  let array = [];
+  console.log(type);
+  for(var i = 0; i < amount; i++) {
+    array.push(type);
+  }
+  return array;
+}
+
+//Получение последнего элемента массива
+function getLastElement(array) {
+  return array[array.length - 1];
+}
+
+
+
+
+
+// function sort() {
+//
+// }
