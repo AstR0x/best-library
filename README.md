@@ -8,3 +8,8 @@ This library provides a set of functions that facilitate the work in Javascript.
 + sortArray
 + newArray
 + lastElement
+
+library connection
+```html
+<script src="js/best-library.js"></script>
+```
