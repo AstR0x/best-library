@@ -1,7 +1,7 @@
 # best-library
 This library provides a set of functions that facilitate the work in Javascript. Library development continues.
 
-5 functions available.
+Available functions
 
 + random
 + arrayRandom
@@ -9,7 +9,7 @@ This library provides a set of functions that facilitate the work in Javascript.
 + newArray
 + lastElement
 
-library connection
+Library connection
 ```html
 <script src="js/best-library.js"></script>
 ```
