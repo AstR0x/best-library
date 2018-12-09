@@ -1,4 +1,3 @@
-//функция возвращающая рандомное число
 /**
  * get random number
  * @param {Number} max upper bound
@@ -19,6 +18,7 @@ function random(max, min = 0, wrongNumber) {
   }
   return randomNumber;
 }
+
 /**
  * get array of random numbers
  * @param {Number} amount amount of array elements
@@ -27,7 +27,7 @@ function random(max, min = 0, wrongNumber) {
  * @param {Boolean} unique unique numbers
  * @return {Array} array of random numbers
  */
-function arrayOfRandomUniqueNumbers(amount, max, min = 0, unique = false) {
+function arrayRandom(amount, max, min = 0, unique = false) {
   if (amount > max - min && unique == true) {
     throw new Error('amount more than maximum - minimum');
   }
@@ -45,12 +45,13 @@ function arrayOfRandomUniqueNumbers(amount, max, min = 0, unique = false) {
   }
   return arrayOfRandomUniqueNumbers;
 }
+
 /**
  * sort array of numbers
  * @param {Array} array array that need sort
  * @return {Array} sorted array
  */
-function sortNumbers(array) {
+function sortArray(array) {
   array.sort((a, b) => {
     if (a > b) return 1;
     if (a < b) return -1;
