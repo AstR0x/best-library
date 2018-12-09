@@ -3,8 +3,8 @@ This library provides a set of functions that facilitate the work in Javascript.
 
 5 functions available
 
-+random
-+arrayRandom
-+sortArray
-+newArray
-+lastElement
++ random
++ arrayRandom
++ sortArray
++ newArray
++ lastElement
