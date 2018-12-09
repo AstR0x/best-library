@@ -30,5 +30,3 @@ function arrayOfRandomUniqueNumber(amount, max, min = 0, uniq = false) {
   }
   return arrayOfRandomUniqueNumber;
 }
-
-console.log(arrayOfRandomUniqueNumber(10, 10, 5, ture));
