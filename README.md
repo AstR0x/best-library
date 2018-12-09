@@ -9,7 +9,7 @@ Available functions
 + newArray
 + lastElement
 
-Library connection
+Library connection.
 ```html
 <script src="js/best-library.js"></script>
 ```
