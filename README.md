@@ -3,11 +3,12 @@ This library provides a set of functions that facilitate the work in Javascript.
 
 Available functions
 
-+ random
-+ arrayRandom
-+ sortArray
-+ newArray
-+ lastElement
++ randNum
++ randArr
++ sortArr
++ newArr
++ lastElem
++ arrOperations
 
 Library connection.
 ```html
