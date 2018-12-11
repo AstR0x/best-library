@@ -19,6 +19,6 @@ Examples of using
 + randNum
 
 ```js
-const number = randNum(0, 5);
+const number = randNum(5, 0);
 console.log(number); // 3
 ```
