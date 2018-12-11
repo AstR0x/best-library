@@ -14,3 +14,11 @@ Library connection.
 ```html
 <script src="js/best-library.js"></script>
 ```
+
+Examples of using
++ randNum
+
+```js
+const number = randNum(0, 5);
+console.log(number); // 3
+```
