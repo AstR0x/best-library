@@ -22,3 +22,12 @@ Examples of using
 const number = randNum(5, 0);
 console.log(number); // 3
 ```
+
++randArr
+```js
+let array = randArr(10, 15, 0, false);
+console.log(array); //(10) [7, 0, 9, 9, 3, 10, 4, 3, 6, 6]
+
+array = randArr(10, 15, 0, true); 
+console.log(array) // (10) [14, 4, 1, 7, 11, 15, 12, 0, 9, 6]
+```
