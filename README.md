@@ -14,7 +14,7 @@ Library connection.
 ```html
 <script src="js/best-library.js"></script>
 ```
-
+*** *** ***
 Examples of using
 + randNum
 
