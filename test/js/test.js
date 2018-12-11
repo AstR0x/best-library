@@ -19,13 +19,13 @@ describe("randNum", function() {
   });
 });
 
-describe("randArray", function() {
+describe("randArr", function() {
   it('return type is an array', function() {
-    assert.isArray(randArray(10, 5, 0));
+    assert.isArray(randArr(10, 5, 0));
   });
 
   it('all numbers unique', function() {
-    let array = randArray(100, 100, 0, true);
+    let array = randArr(100, 100, 0, true);
     for(let i = 0; i < 99; i++) {
       for(let j = i + 1; j < 100; j++) {
         assert.notEqual(array[i],array[j]);
@@ -34,7 +34,7 @@ describe("randArray", function() {
   });
 
   it("returned value in the range from minimum to maximum", function() {
-    let array = randArray(100, 100, 0, false);
+    let array = randArr(100, 100, 0, false);
     array.forEach(function (elem) {
       assert.isBelow(elem, 101);
       assert.isAbove(elem, -1);
@@ -43,35 +43,36 @@ describe("randArray", function() {
   });
 });
 
-describe('sortArray', function () {
+describe('sortArr', function () {
   it('array sorted', function () {
-    let array = randArray(50, 50, 0, false);
+    let array = randArr(50, 50, 0, false);
     for(let i = 1; i < 50; i++) {
       array[i] >= array[i - 1];
     }
   });
 });
 
-describe('newArray', function () {
+describe('newArr', function () {
   it('array length is equal to the parameter "amount"', function () {
-   let array = newArray(10, new String());
+   let array = newArr(10, new String());
     assert.equal(10, array.length);
   });
 
   it('each element of the array is equal to the parameter "element"', function () {
-    let array = newArray(10, 'str');
+    let array = newArr(10, 'str');
     array.forEach(function (elem) {
       assert.equal(elem, 'str');
     });
   });
 });
 
-describe('lastElement', function () {
+describe('lastElem', function () {
   it('the return value is the last element of the array', function() {
     let array = [0, 99, 'str', true, 55];
-    assert.equal(lastElement(array), array[array.length - 1])
+    assert.equal(lastElem(array), array[array.length - 1])
   })
 });
+
 
 
 
