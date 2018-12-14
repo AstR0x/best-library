@@ -15,7 +15,7 @@ Library connection.
 <script src="js/best-library.js"></script>
 ```
 *** *** ***
-Examples of using
+##Examples of using
 + randNum
 
 ```js
@@ -46,4 +46,11 @@ console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 ```js
 let array = newArr(3, new String());
 console.log(array); // (3) [String, String, String]
+```
+
++ lastElem
+```js
+let array = [4, 5, 0, 1, 7];
+let elem = lastElem(array);
+console.log(elem); // 7
 ```
