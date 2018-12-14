@@ -116,10 +116,33 @@ function arrOperations(arr1, arr2, oper) {
     }
   }
 
+/**
+ * get factorial of num
+ * @param {number} num
+ * @returns {number} factorial of num
+ */
+function factrorial(num) {
+  if (num < 2) return 1;
+  return factrorial(num - 1) * num;
+}
+
+// function upper(string) {
+//   string.map(function (elem, index, string) {
+//     if (elem === ' ') return string[index + 1].toUpperCase();
+//   });
+// }
+//
+//
+// let str = 'regisha khozhaeva';
+// upper(str);
+//
+// console.log(str);
 
 
-console.log(randNum(0, 10));
-console.log(randArr(5, 0, 50));
+
+
+
+
 
 
 

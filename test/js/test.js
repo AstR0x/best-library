@@ -73,6 +73,27 @@ describe('lastElem', function () {
   })
 });
 
+describe('factorial', function () {
+  it('return type is an number', function() {
+    assert.isNumber(factrorial(5));
+  });
+
+  it('factorial of 10 is equal to 3628800', function() {
+    assert.equal(factrorial(10), 3628800);
+  });
+
+  it('factorial of 0 is equal to 1', function() {
+    assert.equal(factrorial(0), 2);
+  });
+
+});
+
+
+
+// describe("arrOperations", function () {
+//   it('')
+// });
+
 
 
 
