@@ -41,3 +41,9 @@ let array = [5, 1, 3, 0, 3, 5, 9, 8, 1, 2];
 sortArr(array);
 console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 ```
+
++ newArr
+```js
+let array = newArr(3, new String());
+console.log(array); // (3) [String, String, String]
+```
