@@ -57,7 +57,8 @@ console.log(elem); // 7
 
 + arrOperations
 ```js
-let array = [4, 5, 0, 1, 7];
-let elem = lastElem(array);
-console.log(elem); // 7
+let array1 = [4, 5, 0, 1, 7];
+let array2 = [9, 4, 8, 1, 2];
+arrOperations(array1, array2, '*');
+console.log(array1); // (5) [36, 20, 0, 1, 14]
 ```
