@@ -54,3 +54,10 @@ let array = [4, 5, 0, 1, 7];
 let elem = lastElem(array);
 console.log(elem); // 7
 ```
+
++ arrOperations
+```js
+let array = [4, 5, 0, 1, 7];
+let elem = lastElem(array);
+console.log(elem); // 7
+```
