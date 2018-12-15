@@ -28,14 +28,14 @@ describe("randArr", function() {
     let array = randArr(100, 0, 100, true);
     for(let i = 0; i < 99; i++) {
       for(let j = i + 1; j < 100; j++) {
-        assert.notEqual(array[i],array[j]);
+        assert.notEqual(array[i], array[j]);
       }
     }
   });
 
   it("returned value in the range from minimum to maximum", function() {
     let array = randArr(100, 0, 100, false);
-    array.forEach(function (elem) {
+    array.forEach(function(elem) {
       assert.isBelow(elem, 101);
       assert.isAbove(elem, -1);
     });
@@ -43,8 +43,9 @@ describe("randArr", function() {
   });
 });
 
-describe('sortArr', function () {
-  it('array sorted', function () {
+
+describe('sortArr', function() {
+  it('array sorted', function() {
     let array = randArr(50, 0, 50, false);
     for(let i = 1; i < 50; i++) {
       array[i] >= array[i - 1];
@@ -52,28 +53,40 @@ describe('sortArr', function () {
   });
 });
 
-describe('newArr', function () {
-  it('array length is equal to the parameter "amount"', function () {
-   let array = newArr(10, new String());
+describe('newArr', function() {
+  it('array length is equal to the parameter "amount"', function() {
+    let array = newArr(10, new String());
     assert.equal(10, array.length);
   });
 
-  it('each element of the array is equal to the parameter "element"', function () {
+  it('each element of the array is equal to the parameter "element"', function() {
     let array = newArr(10, 'str');
-    array.forEach(function (elem) {
+    array.forEach(function(elem) {
       assert.equal(elem, 'str');
     });
   });
 });
 
-describe('lastElem', function () {
+describe('lastElem', function() {
   it('the return value is the last element of the array', function() {
     let array = [0, 99, 'str', true, 55];
     assert.equal(lastElem(array), array[array.length - 1])
   })
 });
 
-describe('factorial', function () {
+describe('arrOperations', function() {
+  it('[ 4, 8, 9 ] * [ 1, 4, 5 ] === [4, 32, 45]', function() {
+    let arr1 = [4, 8, 9];
+    let arr2 = [1, 4, 5];
+    let arr3 = [4, 32, 45];
+    arrOperations(arr1, arr2, '*');
+    for(let i = 0; i < 3; i++) {
+      assert.equal(arr1[i], arr3[i]);
+    }
+  });
+});
+
+describe('factorial', function() {
   it('return type is an number', function() {
     assert.isNumber(factrorial(5));
   });
@@ -83,16 +96,24 @@ describe('factorial', function () {
   });
 
   it('factorial of 0 is equal to 1', function() {
-    assert.equal(factrorial(0), 2);
+    assert.equal(factrorial(0), 1);
   });
-
 });
 
+describe('upper', function() {
+  it('the length of the string has not changed', function() {
+    let str1 = 'hello, world!';
+    let str2;
+    str2 = upper(str1);
+    assert.equal(str1.length, str2.length);
+  });
 
+  it('lorem ipsum dolor sit amet => Lorem Ipsum Dolor Sit Amet', function() {
+    let str = 'lorem ipsum dolor sit amet';
+    assert.equal(upper(str), 'Lorem Ipsum Dolor Sit Amet')
+  });
+});
 
-// describe("arrOperations", function () {
-//   it('')
-// });
 
 
 
