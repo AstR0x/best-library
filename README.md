@@ -8,7 +8,7 @@ Available functions
 + sortArr
 + newArr
 + lastElem
-+ arrOperations
++ operArr
 + factorial
 + upperFirst
 
@@ -61,7 +61,7 @@ console.log(elem); // 7
 ```js
 let array1 = [4, 5, 0, 1, 7];
 let array2 = [9, 4, 8, 1, 2];
-arrOperations(array1, array2, '*');
+operArr(array1, array2, '*');
 console.log(array1); // (5) [36, 20, 0, 1, 14]
 ```
 
