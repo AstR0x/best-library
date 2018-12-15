@@ -9,6 +9,8 @@ Available functions
 + newArr
 + lastElem
 + arrOperations
++ factorial
++ upperFirst
 
 Library connection.
 ```html
