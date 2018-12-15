@@ -57,7 +57,7 @@ let elem = lastElem(array);
 console.log(elem); // 7
 ```
 
-+ arrOperations
++ operArr
 ```js
 let array1 = [4, 5, 0, 1, 7];
 let array2 = [9, 4, 8, 1, 2];
