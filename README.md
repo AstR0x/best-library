@@ -1,7 +1,7 @@
 # best-library
 This library provides a set of functions that facilitate the work in Javascript. Library development continues.
 
-Available functions
+### Available functions
 
 + randNum
 + randArr
@@ -12,7 +12,7 @@ Available functions
 + factorial
 + upperFirst
 
-Library connection.
+### Library connection.
 ```html
 <script src="js/best-library.js"></script>
 ```
