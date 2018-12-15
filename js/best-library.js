@@ -142,4 +142,7 @@ function upperFirst(str) {
   return strArray.join('');
 }
 
+let str = 'hello, world!';
+console.log(upperFirst(str)); // Hello, World!;
+
 
