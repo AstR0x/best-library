@@ -74,12 +74,12 @@ describe('lastElem', function() {
   })
 });
 
-describe('arrOperations', function() {
+describe('operArr', function() {
   it('[ 4, 8, 9 ] * [ 1, 4, 5 ] === [4, 32, 45]', function() {
     let arr1 = [4, 8, 9];
     let arr2 = [1, 4, 5];
     let arr3 = [4, 32, 45];
-    arrOperations(arr1, arr2, '*');
+    operArr(arr1, arr2, '*');
     for(let i = 0; i < 3; i++) {
       assert.equal(arr1[i], arr3[i]);
     }
@@ -88,29 +88,29 @@ describe('arrOperations', function() {
 
 describe('factorial', function() {
   it('return type is an number', function() {
-    assert.isNumber(factrorial(5));
+    assert.isNumber(factorial(5));
   });
 
   it('factorial of 10 is equal to 3628800', function() {
-    assert.equal(factrorial(10), 3628800);
+    assert.equal(factorial(10), 3628800);
   });
 
   it('factorial of 0 is equal to 1', function() {
-    assert.equal(factrorial(0), 1);
+    assert.equal(factorial(0), 1);
   });
 });
 
-describe('upper', function() {
+describe('upperFirst', function() {
   it('the length of the string has not changed', function() {
     let str1 = 'hello, world!';
     let str2;
-    str2 = upper(str1);
+    str2 = upperFirst(str1);
     assert.equal(str1.length, str2.length);
   });
 
   it('lorem ipsum dolor sit amet => Lorem Ipsum Dolor Sit Amet', function() {
     let str = 'lorem ipsum dolor sit amet';
-    assert.equal(upper(str), 'Lorem Ipsum Dolor Sit Amet')
+    assert.equal(upperFirst(str), 'Lorem Ipsum Dolor Sit Amet')
   });
 });
 

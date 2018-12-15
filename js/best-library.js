@@ -85,7 +85,7 @@ function lastElem(array) {
  * @param {Array} arr2 second array
  * @param {String} oper operation that will be performed
  */
-function arrOperations(arr1, arr2, oper) {
+function operArr(arr1, arr2, oper) {
   switch(oper) {
     case "+":
       for(let i = 0; i < arr1.length; i++) {
@@ -121,9 +121,9 @@ function arrOperations(arr1, arr2, oper) {
  * @param {number} num
  * @returns {number} factorial of num
  */
-function factrorial(num) {
+function factorial(num) {
   if(num < 2) return 1;
-  return factrorial(num - 1) * num;
+  return factorial(num - 1) * num;
 }
 
 /**
@@ -131,7 +131,7 @@ function factrorial(num) {
  * @param {string} str string to convert
  * @returns {string} converted string
  */
-function upper(str) {
+function upperFirst(str) {
   let strArray = str.split('');
   strArray[0] = strArray[0].toUpperCase();
   for(let i = 0; i < str.length - 1; i++) {
@@ -141,21 +141,5 @@ function upper(str) {
   }
   return strArray.join('');
 }
-
-let arr1 = [4, 8, 9];
-let arr2 = [1, 4, 5];
-let arr3 = [4, 32, 45];
-arrOperations(arr1, arr2, '*');
-console.log(arr1, arr3);
-
-
-
-
-
-
-
-
-
-
 
 
