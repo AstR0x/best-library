@@ -9,6 +9,8 @@ Available functions
 + newArr
 + lastElem
 + arrOperations
++ factorial
++ upperFirst
 
 Library connection.
 ```html
@@ -55,10 +57,21 @@ let elem = lastElem(array);
 console.log(elem); // 7
 ```
 
-+ arrOperations
++ operArr
 ```js
 let array1 = [4, 5, 0, 1, 7];
 let array2 = [9, 4, 8, 1, 2];
 arrOperations(array1, array2, '*');
 console.log(array1); // (5) [36, 20, 0, 1, 14]
+```
+
++ factorial
+```js
+let num = factorial(5);
+console.log(num); // 120
+```
++ upperFirst
+```js
+let str = 'hello, world!'
+console.log(upperFirst(str)); // Hello, World!;
 ```
