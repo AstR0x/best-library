@@ -1,19 +1,21 @@
-mocha.setup('bdd');
-var assert = chai.assert;
+// mocha.setup('bdd');
+const bestLibrary = require('../../js/best-library.js');
+const chai = require('chai');
+const assert = chai.assert;
 
 describe("randNum", function() {
   it('return type is an number', function() {
-    assert.isNumber(randNum(0, 100))
+    assert.isNumber(bestLibrary.randNum(0, 100));
   });
 
   it('returned number not equal wrong number ', function() {
     for(let i = 0; i < 50; i++) {
-      assert.notEqual(randNum(0, 10, 5), 5)
+      assert.notEqual(bestLibrary.randNum(0, 10, 5), 5);
     }
   });
 
   it("returned value in the range from minimum to maximum", function() {
-    let randomNumber = randNum(0, 100);
+    let randomNumber = bestLibrary.randNum(0, 100);
     assert.isBelow(randomNumber, 101);
     assert.isAbove(randomNumber, -1);
   });
@@ -21,11 +23,11 @@ describe("randNum", function() {
 
 describe("randArr", function() {
   it('return type is an array', function() {
-    assert.isArray(randArr(10, 0, 5));
+    assert.isArray(bestLibrary.randArr(10, 0, 5));
   });
 
   it('all numbers unique', function() {
-    let array = randArr(100, 0, 100, true);
+    let array = bestLibrary.randArr(100, 0, 100, true);
     for(let i = 0; i < 99; i++) {
       for(let j = i + 1; j < 100; j++) {
         assert.notEqual(array[i], array[j]);
@@ -34,7 +36,7 @@ describe("randArr", function() {
   });
 
   it("returned value in the range from minimum to maximum", function() {
-    let array = randArr(100, 0, 100, false);
+    let array = bestLibrary.randArr(100, 0, 100, false);
     array.forEach(function(elem) {
       assert.isBelow(elem, 101);
       assert.isAbove(elem, -1);
@@ -43,24 +45,25 @@ describe("randArr", function() {
   });
 });
 
-
 describe('sortArr', function() {
   it('array sorted', function() {
-    let array = randArr(50, 0, 50, false);
+    let array = bestLibrary.randArr(50, 0, 50, false);
+    bestLibrary.sortArr(array);
     for(let i = 1; i < 50; i++) {
-      array[i] >= array[i - 1];
+      assert(array[i] >= array[i - 1]);
+
     }
   });
 });
 
 describe('newArr', function() {
   it('array length is equal to the parameter "amount"', function() {
-    let array = newArr(10, new String());
+    let array = bestLibrary.newArr(10, new String());
     assert.equal(10, array.length);
   });
 
   it('each element of the array is equal to the parameter "element"', function() {
-    let array = newArr(10, 'str');
+    let array = bestLibrary.newArr(10, 'str');
     array.forEach(function(elem) {
       assert.equal(elem, 'str');
     });
@@ -70,7 +73,7 @@ describe('newArr', function() {
 describe('lastElem', function() {
   it('the return value is the last element of the array', function() {
     let array = [0, 99, 'str', true, 55];
-    assert.equal(lastElem(array), array[array.length - 1])
+    assert.equal(bestLibrary.lastElem(array), array[array.length - 1])
   })
 });
 
@@ -79,7 +82,7 @@ describe('operArr', function() {
     let arr1 = [4, 8, 9];
     let arr2 = [1, 4, 5];
     let arr3 = [4, 32, 45];
-    operArr(arr1, arr2, '*');
+    bestLibrary.operArr(arr1, arr2, '*');
     for(let i = 0; i < 3; i++) {
       assert.equal(arr1[i], arr3[i]);
     }
@@ -88,15 +91,15 @@ describe('operArr', function() {
 
 describe('factorial', function() {
   it('return type is an number', function() {
-    assert.isNumber(factorial(5));
+    assert.isNumber(bestLibrary.factorial(5));
   });
 
   it('factorial of 10 is equal to 3628800', function() {
-    assert.equal(factorial(10), 3628800);
+    assert.equal(bestLibrary.factorial(10), 3628800);
   });
 
   it('factorial of 0 is equal to 1', function() {
-    assert.equal(factorial(0), 1);
+    assert.equal(bestLibrary.factorial(0), 1);
   });
 });
 
@@ -104,15 +107,16 @@ describe('upperFirst', function() {
   it('the length of the string has not changed', function() {
     let str1 = 'hello, world!';
     let str2;
-    str2 = upperFirst(str1);
+    str2 = bestLibrary.upperFirst(str1);
     assert.equal(str1.length, str2.length);
   });
 
   it('lorem ipsum dolor sit amet => Lorem Ipsum Dolor Sit Amet', function() {
     let str = 'lorem ipsum dolor sit amet';
-    assert.equal(upperFirst(str), 'Lorem Ipsum Dolor Sit Amet')
+    assert.equal(bestLibrary.upperFirst(str), 'Lorem Ipsum Dolor Sit Amet')
   });
 });
+
 
 
 
