@@ -1,18 +1,18 @@
 # best-library
 This library provides a set of functions that facilitate the work in Javascript. Library development continues.
 
-Available functions
+### Available functions
 
 + randNum
 + randArr
 + sortArr
 + newArr
 + lastElem
-+ arrOperations
++ operArr
 + factorial
 + upperFirst
 
-Library connection.
+### Library connection.
 ```html
 <script src="js/best-library.js"></script>
 ```
@@ -61,7 +61,7 @@ console.log(elem); // 7
 ```js
 let array1 = [4, 5, 0, 1, 7];
 let array2 = [9, 4, 8, 1, 2];
-arrOperations(array1, array2, '*');
+operArr(array1, array2, '*');
 console.log(array1); // (5) [36, 20, 0, 1, 14]
 ```
 
