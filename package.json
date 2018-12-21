@@ -1,6 +1,7 @@
 {
   "name": "best-library",
-  "description": "Best library of javascrip ",
+  "description": "Best library of javascript",
+  "main": "dist/index.min.js",
   "scripts": {
     "test": "mocha ./test/js/test.js",
     "build": "mkdir -p ./dist && uglifyjs ./src/index.js > ./dist/index.min.js",
