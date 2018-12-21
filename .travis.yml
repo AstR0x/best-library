@@ -6,6 +6,9 @@ cache:
   - "node_modules"
 script:
 - "npm test"
+branches:
+  only:
+    - master
 notifications:
   email:
     on_success: never
