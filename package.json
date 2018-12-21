@@ -3,7 +3,7 @@
   "description": "Best library of javascrip ",
   "scripts": {
     "test": "mocha ./test/js/test.js",
-    "build": "mkdir -p ./dist && uglifyjs ./src/index.js > ./dist/index.min.js -b beautify=false,preamble=\",
+    "build": "mkdir -p ./dist && uglifyjs ./src/index.js > ./dist/index.min.js",
     "preversion": "npm test",
     "version": "npm run build"
   },
