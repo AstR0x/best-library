@@ -2,10 +2,9 @@
   "name": "best-library",
   "version": "0.1.0",
   "description": "Best library of javascript",
-  "main": "dist/index.min.js",
   "scripts": {
-    "test": "mocha ./test/js/test.js",
-    "build": "mkdir -p ./dist && uglifyjs ./js/best-library.js > ./dist/index.min.js",
+    "test": "mocha test/spec/best-library-spec.js",
+    "build": "mkdir -p ./dist && uglifyjs ./src/best-library.js > ./dist/best-library.min.js",
     "preversion": "npm test",
     "version": "npm run build"
   },

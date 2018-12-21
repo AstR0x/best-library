@@ -1,5 +1,4 @@
 ;(function() {
-
   /**
    * get random number
    * @param {Number} x bottom bound

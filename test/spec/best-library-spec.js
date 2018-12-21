@@ -1,5 +1,4 @@
-// mocha.setup('bdd');
-const bestLibrary = require('../../js/best-library.js');
+const bestLibrary = require('../../src/best-library.js');
 const chai = require('chai');
 const assert = chai.assert;
 
