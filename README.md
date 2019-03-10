@@ -14,7 +14,7 @@ This library provides a set of functions that facilitate the work in Javascript.
 + upperFirst
 
 ### Library connection.
-```html
+```js
 const bl = require('*/best-library.js');
 ```
 *** *** ***
