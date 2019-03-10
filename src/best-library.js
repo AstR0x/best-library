@@ -47,6 +47,30 @@
   }
 
   /**
+   * bubble sort
+   * @param array
+   */
+  function bubbleSort(array) {
+    let isSorted = false;
+    let lastIndex = array.length - 1;
+    while (!isSorted) {
+      isSorted = true;
+
+      for (let i = 0; i < lastIndex; i++) {
+        let current = array[i];
+        let next = array[i + 1];
+
+        if (current > next) {
+          isSorted = false;
+          array[i] = next;
+          array[i + 1] = current;
+        }
+      }
+      lastIndex--;
+    }
+  }
+
+  /**
    * sort array of numbers
    * @param {Array} array array that need sort
    */
@@ -148,6 +172,7 @@
     randNum: randNum,
     randArr: randArr,
     sortArr: sortArr,
+    bubbleSort: bubbleSort,
     newArr: newArr,
     lastElem: lastElem,
     operArr:operArr,

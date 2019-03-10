@@ -40,7 +40,6 @@ describe("randArr", function() {
       assert.isBelow(elem, 101);
       assert.isAbove(elem, -1);
     });
-
   });
 });
 
@@ -50,7 +49,16 @@ describe('sortArr', function() {
     bestLibrary.sortArr(array);
     for(let i = 1; i < 50; i++) {
       assert(array[i] >= array[i - 1]);
+    }
+  });
+});
 
+describe('bubbleSort', function() {
+  it('array sorted', function() {
+    let array = bestLibrary.randArr(50, 0, 50, false);
+    bestLibrary.bubbleSort(array);
+    for(let i = 1; i < 50; i++) {
+      assert(array[i] >= array[i - 1]);
     }
   });
 });
