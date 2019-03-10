@@ -45,6 +45,20 @@ bl.sortArr(array);
 console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 ```
 
++ bubbleSort
+```js
+let array = [-1, 5, 8, 0, -6, -5, 3, 4, 1, 0];
+bl.bubbleSort(array);
+console.log(array); // (10) [ -6, -5, -1, 0, 0, 1, 3, 4, 5, 8 ]
+````
+
++ selectionSort
+```js
+let array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
+bl.selectionSort(array);
+console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
+```
+
 + newArr
 ```js
 let array = bl.newArr(3, new String());

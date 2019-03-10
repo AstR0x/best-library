@@ -1,4 +1,4 @@
-;(function() {
+;(function () {
   /**
    * get random number
    * @param {Number} x bottom bound
@@ -6,15 +6,15 @@
    * @param {Number} z a number that should not appear
    * @return {Number} random number
    * */
-    function randNum(x, y, z = undefined) {
-    if(arguments.length === 1) {
+  function randNum(x, y, z = undefined) {
+    if (arguments.length === 1) {
       return Math.round(Math.random() * x);
     }
     let randomNumber = Math.round((Math.random() * (y - x) + x));
-    if(y < x) {
+    if (y < x) {
       throw new Error('maximum less than minimum');
     }
-    while(randomNumber === z) {
+    while (randomNumber === z) {
       randomNumber = Math.round((Math.random() * (y - x) + x));
     }
     return randomNumber;
@@ -29,15 +29,15 @@
    * @return {Array} array of random numbers
    */
   function randArr(amount, min, max, unique = false) {
-    if(amount > max - min && unique == true) {
+    if (amount > max - min && unique == true) {
       throw new Error('amount more than difference of maximum and minimum');
     }
     let arrOfRUN = [];
     let randomNumber;
 
-    for(let i = 0; i < amount;) {
+    for (let i = 0; i < amount;) {
       randomNumber = randNum(min, max);
-      if(arrOfRUN.indexOf(randomNumber) !== -1 && unique == true) {
+      if (arrOfRUN.indexOf(randomNumber) !== -1 && unique == true) {
         continue;
       }
       arrOfRUN[i] = randomNumber;
@@ -71,13 +71,35 @@
   }
 
   /**
+   * selection sort
+   * @param array
+   */
+  function selectionSort(array) {
+    for (i = 0; i < array.length - 1; i++) {
+      let lowestValueIndex = i;
+
+      for (j = i + 1; j < array.length; j++) {
+        if (array[j] < array[lowestValueIndex]) {
+          lowestValueIndex = j;
+        }
+      }
+
+      if (lowestValueIndex !== i) {
+        let temp = array[i];
+        array[i] = array[lowestValueIndex];
+        array[lowestValueIndex] = temp;
+      }
+    }
+  }
+
+  /**
    * sort array of numbers
    * @param {Array} array array that need sort
    */
   function sortArr(array) {
     array.sort((a, b) => {
-      if(a > b) return 1;
-      if(a < b) return -1;
+      if (a > b) return 1;
+      if (a < b) return -1;
     });
   }
 
@@ -89,7 +111,7 @@
    */
   function newArr(amount, elem) {
     let array = [];
-    for(var i = 0; i < amount; i++) {
+    for (var i = 0; i < amount; i++) {
       array.push(elem);
     }
     return array;
@@ -111,27 +133,27 @@
    * @param {String} oper operation that will be performed
    */
   function operArr(arr1, arr2, oper) {
-    switch(oper) {
+    switch (oper) {
       case "+":
-        for(let i = 0; i < arr1.length; i++) {
+        for (let i = 0; i < arr1.length; i++) {
           arr1[i] += arr2[i];
         }
         break;
 
       case "-":
-        for(let i = 0; i < arr1.length; i++) {
+        for (let i = 0; i < arr1.length; i++) {
           arr1[i] -= arr2[i];
         }
         break;
 
       case "*":
-        for(let i = 0; i < arr1.length; i++) {
+        for (let i = 0; i < arr1.length; i++) {
           arr1[i] *= arr2[i];
         }
         break;
 
       case "/":
-        for(let i = 0; i < arr1.length; i++) {
+        for (let i = 0; i < arr1.length; i++) {
           arr1[i] /= arr2[i];
         }
         break;
@@ -147,7 +169,7 @@
    * @returns {number} factorial of num
    */
   function factorial(num) {
-    if(num < 2) return 1;
+    if (num < 2) return 1;
     return factorial(num - 1) * num;
   }
 
@@ -159,13 +181,13 @@
   function upperFirst(str) {
     let strArray = str.split('');
     strArray[0] = strArray[0].toUpperCase();
-    for(let i = 0; i < str.length - 1; i++) {
-      if(strArray[i] === ' ') {
+    for (let i = 0; i < str.length - 1; i++) {
+      if (strArray[i] === ' ') {
         strArray[i + 1] = strArray[i + 1].toUpperCase();
       }
     }
     return strArray.join('');
-}
+  }
 
 // the module exports
   var bestLibrary = {
@@ -173,16 +195,17 @@
     randArr: randArr,
     sortArr: sortArr,
     bubbleSort: bubbleSort,
+    selectionSort: selectionSort,
     newArr: newArr,
     lastElem: lastElem,
-    operArr:operArr,
+    operArr: operArr,
     factorial: factorial,
     upperFirst: upperFirst
   };
 
   // define the module as AMD, commonJS or global
   if (typeof define == 'function' && define.amd) {
-    define([], function() {
+    define([], function () {
       return bestLibrary;
     });
   } else if (typeof exports != 'undefined') {

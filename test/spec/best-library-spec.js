@@ -63,6 +63,16 @@ describe('bubbleSort', function() {
   });
 });
 
+describe('selectionSort', function() {
+  it('array sorted', function() {
+    let array = bestLibrary.randArr(50, 0, 50, false);
+    bestLibrary.selectionSort(array);
+    for(let i = 1; i < 50; i++) {
+      assert(array[i] >= array[i - 1]);
+    }
+  });
+});
+
 describe('newArr', function() {
   it('array length is equal to the parameter "amount"', function() {
     let array = bestLibrary.newArr(10, new String());
