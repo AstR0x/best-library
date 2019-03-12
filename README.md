@@ -22,21 +22,21 @@ const bl = require('*/best-library.js');
 ```
 *** *** ***
 
-####bl.randNum(min = 0, max)
+#### bl.randNum(min = 0, max)
 
     The function returns a random number in the range from the first argument to the second argument
 
-#####Arguments
+##### Arguments
 
     1. min = 0 (number): Left border of interval
     2. max (number): Right border of interval 
 
-#####Returns
+##### Returns
 
     (number): Returns a random number
     
     
- #####Examples
+ ##### Examples
  
  ```js
  let number = bl.randNum(0, 10);
@@ -48,22 +48,22 @@ const bl = require('*/best-library.js');
  
 ***
 
-####randArr(amount, min, max, unique = false)
+#### randArr(amount, min, max, unique = false)
 
     The function returns an array of random numbers
     
-#####Arguments    
+##### Arguments    
 
     1. amount (number): Amount amount of array elements
     2. min (number): Bottom border
     3. max (number): Upper border
     4. unique = false (boolean): If the variable === true, the function will return an array of unique numbers
     
-#####Returns
+##### Returns
 
     (array): Returns an array of random numbers
 
-#####Examples
+##### Examples
 
 ```js
 let array = bl.randArr(10, 0, 15, false);
@@ -75,19 +75,19 @@ console.log(array) // (10) [14, 4, 1, 7, 11, 15, 12, 0, 9, 6]
 
 ***
 
-####sortArr(array)
+#### sortArr(array)
 
     Sort array
 
-#####Arguments
+##### Arguments
 
     1. array (array): The array to sort
     
-#####Returns
+##### Returns
     
     The function returns nothing
 
-#####Examples
+##### Examples
 
 ```js
 let array = [5, 1, 3, 0, 3, 5, 9, 8, 1, 2];
@@ -97,19 +97,19 @@ console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 
 ***
 
-####bubbleSort(array)
+#### bubbleSort(array)
 
     Sort the array by bubble sorting
 
-#####Arguments
+##### Arguments
 
     1. array (array): The array to sort
     
-#####Returns
+##### Returns
     
     The function returns nothing
 
-#####Examples
+##### Examples
 
 ```js
 let array = [-1, 5, 8, 0, -6, -5, 3, 4, 1, 0];
@@ -119,19 +119,19 @@ console.log(array); // (10) [ -6, -5, -1, 0, 0, 1, 3, 4, 5, 8 ]
 
 ***
 
-####selectionSort(array)
+#### selectionSort(array)
 
     Sort the array by selection sorting
 
-#####Arguments
+##### Arguments
 
     1. array (array): The array to sort
     
-#####Returns
+##### Returns
     
     The function returns nothing
 
-#####Examples
+##### Examples
 
 ```js
 let array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
@@ -141,20 +141,20 @@ console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
 
 ***
 
-####newArr(length, element)
+#### newArr(length, element)
    
     Create an array filled with identical elements
 
-#####Arguments
+##### Arguments
 
     1. length (number): Array length
     2. element (string|number|boolean|underfined|null|object): Array element
         
-#####Returns
+##### Returns
     
     (array): Returns array
 
-#####Examples
+##### Examples
 ```js
 let array = bl.newArr(3, new String());
 console.log(array); // (3) [String, String, String]
@@ -162,19 +162,19 @@ console.log(array); // (3) [String, String, String]
 
 ***
 
-####lastElem(array)
+#### lastElem(array)
 
     Find last array element
 
-#####Arguments
+##### Arguments
 
     1. array (array): The array to find last element
      
-#####Returns
+##### Returns
     
     (all types): Returns last array element
     
-#####Examples    
+##### Examples    
 
 ```js
 let array = [4, 5, 0, 1, 7];
@@ -184,21 +184,21 @@ console.log(elem); // 7
 
 ***
 
-####operArr(array1, array2, operation)
+#### operArr(array1, array2, operation)
 
     The function performs mathematical operations on arrays. The result is written to the first array.
    
-#####Arguments
+##### Arguments
 
     1. array1 (array): First array to perform operation
     2. array2 (array): Second array to perform operation
     3. operation (string): The operation that is performed on arrays
     
-#####Returns
+##### Returns
      
     The function returns nothing
 
-#####Examples
+##### Examples
 ```js
 let array1 = [4, 5, 0, 1, 7];
 let array2 = [9, 4, 8, 1, 2];
@@ -208,19 +208,19 @@ console.log(array1); // (5) [36, 20, 0, 1, 14]
 
 ***
 
-####factorial(number)
+#### factorial(number)
 
     Calculate the factorial of numbers
     
-#####Arguments
+##### Arguments
     
     1. number (number): The number to calculate factorial
 
-#####Returns
+##### Returns
     
     (number): Returns factorial of a number
 
-#####Examples
+##### Examples
 
 ```js
 let num = bl.factorial(5);
@@ -229,19 +229,19 @@ console.log(num); // 120
 
 ***
 
-####upperFirst(string)
+#### upperFirst(string)
 
     Translate to upper case first string letter
     
-#####Arguments
+##### Arguments
 
     1. string (string): String to modify  
     
-#####Returns
+##### Returns
 
     (string): Returns modify string
 
-#####Examples
+##### Examples
 
 ```js
 let str = 'hello, world!'
