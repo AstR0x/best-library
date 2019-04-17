@@ -87,6 +87,13 @@ describe('newArr', function() {
   });
 });
 
+describe('RLE', function() {
+  it('AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB => A4B3C2X1Y1Z1D4E3F3A6B28', function() {
+    const str = 'AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB';
+    assert.equal(bestLibrary.RLE(str), 'A4B3C2X1Y1Z1D4E3F3A6B28');
+  })
+});
+
 describe('lastElem', function() {
   it('the return value is the last element of the array', function() {
     let array = [0, 99, 'str', true, 55];

@@ -40,10 +40,10 @@ const bl = require('*/best-library.js');
  ##### Examples
  
  ```js
- let number = bl.randNum(0, 10);
+ const number = bl.randNum(0, 10);
  console.log(number); // 7
  
- let number = bl.randNumb(10);
+ const number = bl.randNumb(10);
  console.log(number); // 5
  ```   
  
@@ -67,10 +67,10 @@ const bl = require('*/best-library.js');
 ##### Examples
 
 ```js
-let array = bl.randArr(10, 0, 15, false);
+const array = bl.randArr(10, 0, 15, false);
 console.log(array); // (10) [7, 0, 9, 9, 3, 10, 4, 3, 6, 6]
 
-let array = bl.randArr(10, 0, 15, true);
+const array = bl.randArr(10, 0, 15, true);
 console.log(array) // (10) [14, 4, 1, 7, 11, 15, 12, 0, 9, 6]
 ```
 
@@ -91,7 +91,7 @@ console.log(array) // (10) [14, 4, 1, 7, 11, 15, 12, 0, 9, 6]
 ##### Examples
 
 ```js
-let array = [5, 1, 3, 0, 3, 5, 9, 8, 1, 2];
+const array = [5, 1, 3, 0, 3, 5, 9, 8, 1, 2];
 bl.sortArr(array);
 console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 ```
@@ -113,7 +113,7 @@ console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 ##### Examples
 
 ```js
-let array = [-1, 5, 8, 0, -6, -5, 3, 4, 1, 0];
+const array = [-1, 5, 8, 0, -6, -5, 3, 4, 1, 0];
 bl.bubbleSort(array);
 console.log(array); // (10) [ -6, -5, -1, 0, 0, 1, 3, 4, 5, 8 ]
 ````
@@ -135,7 +135,7 @@ console.log(array); // (10) [ -6, -5, -1, 0, 0, 1, 3, 4, 5, 8 ]
 ##### Examples
 
 ```js
-let array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
+const array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
 bl.selectionSort(array);
 console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
 ```
@@ -157,7 +157,7 @@ console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
 
 ##### Examples
 ```js
-let array = bl.newArr(3, new String());
+const array = bl.newArr(3, new String());
 console.log(array); // (3) [String, String, String]
 ```
 
@@ -178,8 +178,8 @@ console.log(array); // (3) [String, String, String]
 ##### Examples    
 
 ```js
-let array = [4, 5, 0, 1, 7];
-let elem = bl.lastElem(array);
+const array = [4, 5, 0, 1, 7];
+const elem = bl.lastElem(array);
 console.log(elem); // 7
 ```
 
@@ -201,8 +201,8 @@ console.log(elem); // 7
 
 ##### Examples
 ```js
-let array1 = [4, 5, 0, 1, 7];
-let array2 = [9, 4, 8, 1, 2];
+const array1 = [4, 5, 0, 1, 7];
+const array2 = [9, 4, 8, 1, 2];
 bl.operArr(array1, array2, '*');
 console.log(array1); // (5) [36, 20, 0, 1, 14]
 ```
@@ -224,7 +224,7 @@ console.log(array1); // (5) [36, 20, 0, 1, 14]
 ##### Examples
 
 ```js
-let num = bl.factorial(5);
+const num = bl.factorial(5);
 console.log(num); // 120
 ```
 
@@ -245,8 +245,30 @@ console.log(num); // 120
 ##### Examples
 
 ```js
-let num = bl.fibonacci(18);
+const num = bl.fibonacci(18);
 console.log(num); // 1597
+```
+
+***
+
+#### RLE(str)
+
+    Compress string
+    
+##### Arguments
+    
+    1. str (string): The string to compress
+
+##### Returns
+    
+    (string): Returns compressed string
+
+##### Examples
+
+```js
+const str = 'AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBB';
+const compressedStr = RLE(str);
+console.log(compressedStr); // A4B3C2X1Y1Z1D4E3F3A6B5
 ```
 
 ***
@@ -266,6 +288,6 @@ console.log(num); // 1597
 ##### Examples
 
 ```js
-let str = 'hello, world!'
+const str = 'hello, world!'
 console.log(bl.upperFirst(str)); // Hello, World!;
 ```

@@ -185,6 +185,27 @@
     return fibonacci(num - 1) + fibonacci(num - 2);
   }
 
+  /**
+   *
+   * @param {string} str
+   * @returns {string} compressed string
+   */
+  function RLE(str) {
+    let newStr = '';
+    let last = str[0];
+    let count = 1;
+    for (let i = 1; i <= str.length; i++) {
+      if (str[i] == last) {
+        count++;
+      } else {
+        newStr += last + count;
+        last = str[i];
+        count = 1;
+      }
+    }
+    return newStr;
+  }
+
 
   /**
    * convert the first letter of a word to upper case
@@ -212,6 +233,7 @@
     newArr: newArr,
     lastElem: lastElem,
     operArr: operArr,
+    RLE: RLE,
     factorial: factorial,
     fibonacci: fibonacci,
     upperFirst: upperFirst
