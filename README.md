@@ -229,6 +229,27 @@ console.log(num); // 120
 
 ***
 
+#### fibonacci(number)
+
+    Calculate the fibonacci number
+    
+##### Arguments
+    
+    1. number (number): The number to calculate fibonacci number
+
+##### Returns
+    
+    (number): Returns nth fibonacci number
+
+##### Examples
+
+```js
+let num = bl.fibonacci(18);
+console.log(num); // 1597
+```
+
+***
+
 #### upperFirst(string)
 
     Translate to upper case first string letter
