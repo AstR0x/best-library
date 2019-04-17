@@ -13,6 +13,7 @@ This library provides a set of functions that facilitate the work in Javascript.
 + lastElem
 + operArr
 + factorial
++ fibonacci
 + upperFirst
 
 ### Library connection.
