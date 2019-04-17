@@ -14,6 +14,7 @@ This library provides a set of functions that facilitate the work in Javascript.
 + operArr
 + factorial
 + fibonacci
++ RLE
 + upperFirst
 
 ### Library connection.
