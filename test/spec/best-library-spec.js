@@ -120,6 +120,20 @@ describe('factorial', function() {
   });
 });
 
+describe('fibonacci', function() {
+  it('return type is an number', function() {
+    assert.isNumber(bestLibrary.fibonacci(5));
+  });
+
+  it('fibonacci of 18 is equal to 1597', function() {
+    assert.equal(bestLibrary.fibonacci(18), 1597);
+  });
+
+  it('fibonacci of 1 is equal to 1', function() {
+    assert.equal(bestLibrary.fibonacci(1), 0);
+  });
+});
+
 describe('upperFirst', function() {
   it('the length of the string has not changed', function() {
     let str1 = 'hello, world!';

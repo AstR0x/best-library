@@ -174,6 +174,19 @@
   }
 
   /**
+   * get the nth Fibonacci number
+   * @param {number}calculated fibonacci number
+   * @returns {number} Fibonacci number
+   */
+  function fibonacci(num) {
+    if (num == 1) return 0;
+    if (num == 2) return 1;
+
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  }
+
+
+  /**
    * convert the first letter of a word to upper case
    * @param {string} str string to convert
    * @returns {string} converted string
@@ -200,6 +213,7 @@
     lastElem: lastElem,
     operArr: operArr,
     factorial: factorial,
+    fibonacci: fibonacci,
     upperFirst: upperFirst
   };
 
