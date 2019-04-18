@@ -24,21 +24,20 @@ const bl = require('*/best-library.js');
 ```
 *** *** ***
 
-#### bl.randNum(min = 0, max)
+*bl.randNum(min = 0, max)*
 
     The function returns a random number in the range from the first argument to the second argument
 
-##### Arguments
++ Arguments
 
-    1. min = 0 (number): Left border of interval
-    2. max (number): Right border of interval 
+    1. min = 0 (*number*): Left border of interval
+    2. max (*number*): Right border of interval 
 
-##### Returns
++ Returns
 
-    (number): Returns a random number
+    (*number*): Returns a random number
     
-    
- ##### Examples
++ Examples
  
  ```js
  const number = bl.randNum(0, 10);
@@ -50,22 +49,22 @@ const bl = require('*/best-library.js');
  
 ***
 
-#### randArr(amount, min, max, unique = false)
+**randArr(amount, min, max, unique = false)**
 
     The function returns an array of random numbers
     
-##### Arguments    
+Arguments    
 
     1. amount (number): Amount amount of array elements
     2. min (number): Bottom border
     3. max (number): Upper border
     4. unique = false (boolean): If the variable === true, the function will return an array of unique numbers
     
-##### Returns
+Returns
 
     (array): Returns an array of random numbers
 
-##### Examples
+Examples
 
 ```js
 const array = bl.randArr(10, 0, 15, false);
@@ -81,15 +80,15 @@ console.log(array) // (10) [14, 4, 1, 7, 11, 15, 12, 0, 9, 6]
 
     Sort array
 
-##### Arguments
+*Arguments*
 
     1. array (array): The array to sort
     
-##### Returns
+*Returns*
     
     The function returns nothing
 
-##### Examples
+*Examples*
 
 ```js
 const array = [5, 1, 3, 0, 3, 5, 9, 8, 1, 2];
