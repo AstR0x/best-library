@@ -1,10 +1,11 @@
 ;(function () {
   /**
    * get random number
-   * @param {Number} x bottom bound
-   * @param {Number} y  upper bound
-   * @param {Number} z a number that should not appear
-   * @return {Number} random number
+   *
+   * @param {number} x bottom bound
+   * @param {number} y  upper bound
+   * @param {number} z a number that should not appear
+   * @return {number} random number
    * */
   function randNum(x, y, z = undefined) {
     if (arguments.length === 1) {
@@ -22,11 +23,12 @@
 
   /**
    * get array of random numbers
-   * @param {Number} amount amount of array elements
-   * @param {Number} max upper bound
-   * @param {Number} min bottom bound
-   * @param {Boolean} unique unique numbers
-   * @return {Array} array of random numbers
+   *
+   * @param {number} amount amount of array elements
+   * @param {number} max upper bound
+   * @param {number} min bottom bound
+   * @param {boolean} unique unique numbers
+   * @return {array} array of random numbers
    */
   function randArr(amount, min, max, unique = false) {
     if (amount > max - min && unique == true) {
@@ -44,6 +46,40 @@
       i++;
     }
     return arrOfRUN;
+  }
+
+  /**
+   * find element index
+   *
+   * @param {number} element
+   * @param {array} arr
+   * @returns {number}
+   */
+  function interpolationSearch(element, arr) {
+    let diff;
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (arr[left] < element && arr[right] > element) {
+      diff = left + Math.floor(((element - arr[left]) * (right - left)) / (arr[right] - arr[left]) );
+
+      if (arr[diff] < element) {
+        left = diff + 1;
+      } else if (arr[diff] > element) {
+        right = diff - 1;
+      } else {
+        return diff;
+      }
+    }
+
+    if (arr[left] === element) {
+
+      return left;
+    } else if (arr[right] === element) {
+
+      return right;
+    }
+    return -1;
   }
 
   /**
@@ -105,8 +141,9 @@
 
   /**
    * create new array
-   * @param {Number} amount amount of new array
-   * @param {Number} elem element that need to fill the array
+   *
+   * @param {number} amount amount of new array
+   * @param {number} elem element that need to fill the array
    * @return {Array} new array
    */
   function newArr(amount, elem) {
@@ -119,7 +156,7 @@
 
   /**
    * get last element of array
-   * @param {Array} array
+   * @param {array} array
    * @return {*}
    */
   function lastElem(array) {
@@ -128,9 +165,10 @@
 
   /**
    * perform an operation on two arrays
-   * @param {Array} arr1 array that will change
-   * @param {Array} arr2 second array
-   * @param {String} oper operation that will be performed
+   *
+   * @param {array} arr1 array that will change
+   * @param {array} arr2 second array
+   * @param {string} oper operation that will be performed
    */
   function operArr(arr1, arr2, oper) {
     switch (oper) {
@@ -175,6 +213,7 @@
 
   /**
    * get the nth Fibonacci number
+   *
    * @param {number}calculated fibonacci number
    * @returns {number} Fibonacci number
    */
@@ -186,7 +225,7 @@
   }
 
   /**
-   *
+   * String compression
    * @param {string} str
    * @returns {string} compressed string
    */
@@ -209,6 +248,7 @@
 
   /**
    * convert the first letter of a word to upper case
+   *
    * @param {string} str string to convert
    * @returns {string} converted string
    */
@@ -224,10 +264,11 @@
   }
 
 // the module exports
-  var bestLibrary = {
+  const bestLibrary = {
     randNum: randNum,
     randArr: randArr,
     sortArr: sortArr,
+    interpolationSearch: interpolationSearch,
     bubbleSort: bubbleSort,
     selectionSort: selectionSort,
     newArr: newArr,

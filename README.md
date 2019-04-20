@@ -7,6 +7,7 @@ This library provides a set of functions that facilitate the work in Javascript.
 + randNum
 + randArr
 + sortArr
++ interpolationSearch
 + bubbleSort
 + selectionSort
 + newArr
@@ -98,6 +99,28 @@ console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 ```
 
 ***
+
+***
+
+#### interpolationSearch(element, array)
+
+    Find element index
+
+##### Arguments
+
+    1. array (array): The sorted array to find element index
+    
+##### Returns
+    
+    The function returns element index or -1
+
+##### Examples
+
+```js
+const array = [3, 5, 9, 11, 15, 98, 5];
+const index = bl.interpolationSearch(9, array);
+console.log(index); // 2
+```
 
 #### bubbleSort(array)
 
