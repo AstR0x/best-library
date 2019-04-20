@@ -100,8 +100,6 @@ console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 
 ***
 
-***
-
 #### interpolationSearch(element, array)
 
     Find element index
@@ -109,6 +107,7 @@ console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 ##### Arguments
 
     1. array (array): The sorted array to find element index
+    2. element (number):  Element to find index
     
 ##### Returns
     
@@ -117,10 +116,12 @@ console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
 ##### Examples
 
 ```js
-const array = [3, 5, 9, 11, 15, 98, 5];
+const array = [3, 5, 9, 11, 15, 98, 505];
 const index = bl.interpolationSearch(9, array);
 console.log(index); // 2
 ```
+
+***
 
 #### bubbleSort(array)
 
