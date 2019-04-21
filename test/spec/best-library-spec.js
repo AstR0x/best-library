@@ -28,6 +28,7 @@ describe("randArr", function() {
   it('all numbers unique', function() {
     const array = bestLibrary.randArr(100, 0, 100, true);
     for(let i = 0; i < 99; i++) {
+
       for(let j = i + 1; j < 100; j++) {
         assert.notEqual(array[i], array[j]);
       }
@@ -47,6 +48,7 @@ describe('sortArr', function() {
   it('array sorted', function() {
     const array = bestLibrary.randArr(50, 0, 50, false);
     bestLibrary.sortArr(array);
+
     for(let i = 1; i < 50; i++) {
       assert(array[i] >= array[i - 1]);
     }
@@ -64,6 +66,7 @@ describe('bubbleSort', function() {
   it('array sorted', function() {
     const array = bestLibrary.randArr(50, 0, 50, false);
     bestLibrary.bubbleSort(array);
+
     for(let i = 1; i < 50; i++) {
       assert(array[i] >= array[i - 1]);
     }
@@ -74,10 +77,22 @@ describe('selectionSort', function() {
   it('array sorted', function() {
     const array = bestLibrary.randArr(50, 0, 50, false);
     bestLibrary.selectionSort(array);
+
     for(let i = 1; i < 50; i++) {
       assert(array[i] >= array[i - 1]);
     }
   });
+});
+
+describe('insertionSort', function() {
+   it('array sorted', function () {
+       const array = bestLibrary.randArr(50, 0, 50, false);
+       bestLibrary.insertionSort(array);
+
+       for(let i = 1; i < 50; i++) {
+           assert(array[i] >= array[i - 1]);
+       }
+   });
 });
 
 describe('newArr', function() {

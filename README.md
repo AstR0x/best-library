@@ -86,10 +86,6 @@ console.log(array) // (10) [14, 4, 1, 7, 11, 15, 12, 0, 9, 6]
 
     1. array (array): The array to sort
     
-##### Returns
-    
-    The function returns nothing
-
 ##### Examples
 
 ```js
@@ -125,16 +121,12 @@ console.log(index); // 2
 
 #### bubbleSort(array)
 
-    Sort the array by bubble sorting
+    Sort the array by bubble sort
 
 ##### Arguments
 
     1. array (array): The array to sort
     
-##### Returns
-    
-    The function returns nothing
-
 ##### Examples
 
 ```js
@@ -147,21 +139,35 @@ console.log(array); // (10) [ -6, -5, -1, 0, 0, 1, 3, 4, 5, 8 ]
 
 #### selectionSort(array)
 
-    Sort the array by selection sorting
+    Sort the array by selection sort
 
 ##### Arguments
 
     1. array (array): The array to sort
     
-##### Returns
-    
-    The function returns nothing
-
 ##### Examples
 
 ```js
 const array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
 bl.selectionSort(array);
+console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
+```
+
+***
+
+#### insertionSort(array)
+
+    Sort the array by insertion sort
+
+##### Arguments
+
+    1. array (array): The array to sort 
+
+##### Examples
+
+```js
+const array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
+bl.insertionSort(array);
 console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
 ```
 
