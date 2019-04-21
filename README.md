@@ -10,6 +10,7 @@ This library provides a set of functions that facilitate the work in Javascript.
 + interpolationSearch
 + bubbleSort
 + selectionSort
++ insertionSort
 + newArr
 + lastElem
 + operArr
