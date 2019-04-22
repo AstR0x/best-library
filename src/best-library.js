@@ -1,4 +1,6 @@
 ;(function () {
+
+
     /**
      * Get random number
      *
@@ -7,7 +9,7 @@
      * @param {number} z A number that should not appear
      * @return {number} Random number
      * */
-    function randNum(x, y, z = undefined) {
+    function randomNum(x, y, z = undefined) {
         if (arguments.length === 1) {
             return Math.round(Math.random() * x);
         }
@@ -21,6 +23,7 @@
         return randomNumber;
     }
 
+
     /**
      * Get array of random numbers
      *
@@ -30,7 +33,7 @@
      * @param {boolean} unique Unique numbers
      * @return {array} array Array of random numbers
      */
-    function randArr(amount, min, max, unique = false) {
+    function randomArray(amount, min, max, unique = false) {
         if (amount > max - min && unique == true) {
             throw new Error('amount more than difference of maximum and minimum');
         }
@@ -38,7 +41,7 @@
         let randomNumber;
 
         for (let i = 0; i < amount;) {
-            randomNumber = randNum(min, max);
+            randomNumber = randomNum(min, max);
             if (arrOfRUN.indexOf(randomNumber) !== -1 && unique == true) {
                 continue;
             }
@@ -47,6 +50,157 @@
         }
         return arrOfRUN;
     }
+
+
+    /**
+     * Create new array
+     *
+     * @param {number} amount Amount of new array
+     * @param {number} elem Element that need to fill the array
+     * @return {array} New array
+     */
+    function createArray(amount, elem) {
+        let array = [];
+        for (var i = 0; i < amount; i++) {
+            array.push(elem);
+        }
+        return array;
+    }
+
+
+    /**
+     * Perform an operation on two arrays
+     *
+     * @param {array} arr1 Array that will change
+     * @param {array} arr2 Second array
+     * @param {string} oper Operation that will be performed
+     */
+    function arrayOperations(arr1, arr2, oper) {
+        switch (oper) {
+            case "+":
+                for (let i = 0; i < arr1.length; i++) {
+                    arr1[i] += arr2[i];
+                }
+                break;
+
+            case "-":
+                for (let i = 0; i < arr1.length; i++) {
+                    arr1[i] -= arr2[i];
+                }
+                break;
+
+            case "*":
+                for (let i = 0; i < arr1.length; i++) {
+                    arr1[i] *= arr2[i];
+                }
+                break;
+
+            case "/":
+                for (let i = 0; i < arr1.length; i++) {
+                    arr1[i] /= arr2[i];
+                }
+                break;
+
+            default:
+                throw new Error('wrong operation');
+        }
+    }
+
+
+    /**
+     * Get last element of array
+     *
+     * @param {array} array Array to search
+     * @return {*}
+     */
+    function lastElem(array) {
+        return array[array.length - 1];
+    }
+
+
+    /**
+     * Sort array of numbers
+     *
+     * @param {array} array Array to sort
+     */
+    function sortArray(array) {
+        array.sort((a, b) => {
+            if (a > b) return 1;
+            if (a < b) return -1;
+        });
+    }
+
+
+    /**
+     * Sort array of numbers
+     *
+     * @param {array} array Array to sort
+     */
+    function bubbleSort(array) {
+        let isSorted = false;
+        let lastIndex = array.length - 1;
+        while (!isSorted) {
+            isSorted = true;
+
+            for (let i = 0; i < lastIndex; i++) {
+                let current = array[i];
+                let next = array[i + 1];
+
+                if (current > next) {
+                    isSorted = false;
+                    array[i] = next;
+                    array[i + 1] = current;
+                }
+            }
+            lastIndex--;
+        }
+    }
+
+
+    /**
+     * Sort array of numbers
+     *
+     * @param {array} array Array to sort
+     */
+    function selectionSort(array) {
+        for (i = 0; i < array.length - 1; i++) {
+            let lowestValueIndex = i;
+
+            for (j = i + 1; j < array.length; j++) {
+                if (array[j] < array[lowestValueIndex]) {
+                    lowestValueIndex = j;
+                }
+            }
+
+            if (lowestValueIndex !== i) {
+                let temp = array[i];
+                array[i] = array[lowestValueIndex];
+                array[lowestValueIndex] = temp;
+            }
+        }
+    }
+
+
+    /**
+     * Sort array of numbers
+     *
+     * @param array {array} Array to sort
+     */
+    function insertionSort(array) {
+        for (let i = 1; i < array.length; i++) {
+
+            let position = i;
+            const temp = array[position];
+
+            while (temp < array[position - 1] && position > 0) {
+                array[position] = array[position - 1];
+                position--;
+            }
+
+            array[position] = temp;
+        }
+    }
+
 
     /**
      * Find element index
@@ -82,148 +236,6 @@
         return -1;
     }
 
-    /**
-     * Sort array of numbers
-     *
-     * @param {array} array Array to sort
-     */
-    function bubbleSort(array) {
-        let isSorted = false;
-        let lastIndex = array.length - 1;
-        while (!isSorted) {
-            isSorted = true;
-
-            for (let i = 0; i < lastIndex; i++) {
-                let current = array[i];
-                let next = array[i + 1];
-
-                if (current > next) {
-                    isSorted = false;
-                    array[i] = next;
-                    array[i + 1] = current;
-                }
-            }
-            lastIndex--;
-        }
-    }
-
-    /**
-     * Sort array of numbers
-     *
-     * @param {array} array Array to sort
-     */
-    function selectionSort(array) {
-        for (i = 0; i < array.length - 1; i++) {
-            let lowestValueIndex = i;
-
-            for (j = i + 1; j < array.length; j++) {
-                if (array[j] < array[lowestValueIndex]) {
-                    lowestValueIndex = j;
-                }
-            }
-
-            if (lowestValueIndex !== i) {
-                let temp = array[i];
-                array[i] = array[lowestValueIndex];
-                array[lowestValueIndex] = temp;
-            }
-        }
-    }
-
-    /**
-     * Sort array of numbers
-     *
-     * @param array {array} Array to sort
-     */
-    function insertionSort(array) {
-        for (let i = 1; i < array.length; i++) {
-
-            let position = i;
-            const temp = array[position];
-
-            while (temp < array[position - 1] && position > 0) {
-                array[position] = array[position - 1];
-                position--;
-            }
-
-            array[position] = temp;
-        }
-    }
-
-    /**
-     * Sort array of numbers
-     *
-     * @param {array} array Array to sort
-     */
-    function sortArr(array) {
-        array.sort((a, b) => {
-            if (a > b) return 1;
-            if (a < b) return -1;
-        });
-    }
-
-    /**
-     * Create new array
-     *
-     * @param {number} amount Amount of new array
-     * @param {number} elem Element that need to fill the array
-     * @return {array} New array
-     */
-    function newArr(amount, elem) {
-        let array = [];
-        for (var i = 0; i < amount; i++) {
-            array.push(elem);
-        }
-        return array;
-    }
-
-    /**
-     * Get last element of array
-     *
-     * @param {array} array Array to search
-     * @return {*}
-     */
-    function lastElem(array) {
-        return array[array.length - 1];
-    }
-
-    /**
-     * Perform an operation on two arrays
-     *
-     * @param {array} arr1 Array that will change
-     * @param {array} arr2 Second array
-     * @param {string} oper Operation that will be performed
-     */
-    function operArr(arr1, arr2, oper) {
-        switch (oper) {
-            case "+":
-                for (let i = 0; i < arr1.length; i++) {
-                    arr1[i] += arr2[i];
-                }
-                break;
-
-            case "-":
-                for (let i = 0; i < arr1.length; i++) {
-                    arr1[i] -= arr2[i];
-                }
-                break;
-
-            case "*":
-                for (let i = 0; i < arr1.length; i++) {
-                    arr1[i] *= arr2[i];
-                }
-                break;
-
-            case "/":
-                for (let i = 0; i < arr1.length; i++) {
-                    arr1[i] /= arr2[i];
-                }
-                break;
-
-            default:
-                throw new Error('wrong operation');
-        }
-    }
 
     /**
      * Get factorial of num
@@ -235,6 +247,7 @@
         if (num < 2) return 1;
         return factorial(num - 1) * num;
     }
+
 
     /**
      * Get the nth Fibonacci number
@@ -248,6 +261,7 @@
 
         return fibonacci(num - 1) + fibonacci(num - 2);
     }
+
 
     /**
      * String compression
@@ -289,22 +303,44 @@
         return strArray.join('');
     }
 
+
+    /**
+     * Measure function execution time
+     *
+     * @param {function} callback The function whose time is to be measured
+     * @returns {{answer: *, time: number}|number} Object consist of execution time and callback function return
+     */
+    function measureTime(callback) {
+        const args = [...arguments].slice(1);
+
+        const startTime = performance.now();
+        const answer = callback(...args);
+        const time = performance.now() - startTime;
+
+        if(answer !== undefined) {
+            return {time, answer}
+        } else {
+            return time;
+        }
+    }
+
 // the module exports
     const bestLibrary = {
-        randNum,
-        randArr,
-        sortArr,
-        interpolationSearch,
+        randomNum,
+        randomArray,
+        createArray,
+        arrayOperations,
+        lastElem,
+        sortArray,
         bubbleSort,
         selectionSort,
         insertionSort,
-        newArr,
-        lastElem,
-        operArr,
-        RLE,
+        interpolationSearch,
         factorial,
         fibonacci,
+        RLE,
         upperFirst,
+        measureTime,
     };
 
     // define the module as AMD, commonJS or global

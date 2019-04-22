@@ -4,20 +4,21 @@ This library provides a set of functions that facilitate the work in Javascript.
 
 ### Available functions
 
-+ randNum
-+ randArr
-+ sortArr
-+ interpolationSearch
++ randomNum
++ randomArray
++ createArray
++ arrayOperations
++ lastElem
++ sortArray
 + bubbleSort
 + selectionSort
 + insertionSort
-+ newArr
-+ lastElem
-+ operArr
++ interpolationSearch
 + factorial
 + fibonacci
 + RLE
 + upperFirst
++ measureTime
 
 ### Library connection.
 
@@ -26,13 +27,13 @@ const bl = require('*/best-library.js');
 ```
 *** *** ***
 
-#### bl.randNum(min = 0, max)
+#### bl.randomNum([min = 0], max)
 
     The function returns a random number in the range from the first argument to the second argument
 
 ##### Arguments
 
-    1. min = 0 (number): Left border of interval
+    1. [min = 0] (number): Left border of interval
     2. max (number): Right border of interval 
 
 ##### Returns
@@ -52,7 +53,7 @@ const bl = require('*/best-library.js');
  
 ***
 
-#### randArr(amount, min, max, unique = false)
+#### bl.randomArray(amount, min, max, [unique = false])
 
     The function returns an array of random numbers
     
@@ -79,102 +80,7 @@ console.log(array) // (10) [14, 4, 1, 7, 11, 15, 12, 0, 9, 6]
 
 ***
 
-#### sortArr(array)
-
-    Sort array
-
-##### Arguments
-
-    1. array (array): The array to sort
-    
-##### Examples
-
-```js
-const array = [5, 1, 3, 0, 3, 5, 9, 8, 1, 2];
-bl.sortArr(array);
-console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
-```
-
-***
-
-#### interpolationSearch(element, array)
-
-    Find element index
-
-##### Arguments
-
-    1. array (array): The sorted array to find element index
-    2. element (number):  Element to find index
-    
-##### Returns
-    
-    The function returns element index or -1
-
-##### Examples
-
-```js
-const array = [3, 5, 9, 11, 15, 98, 505];
-const index = bl.interpolationSearch(9, array);
-console.log(index); // 2
-```
-
-***
-
-#### bubbleSort(array)
-
-    Sort the array by bubble sort
-
-##### Arguments
-
-    1. array (array): The array to sort
-    
-##### Examples
-
-```js
-const array = [-1, 5, 8, 0, -6, -5, 3, 4, 1, 0];
-bl.bubbleSort(array);
-console.log(array); // (10) [ -6, -5, -1, 0, 0, 1, 3, 4, 5, 8 ]
-````
-
-***
-
-#### selectionSort(array)
-
-    Sort the array by selection sort
-
-##### Arguments
-
-    1. array (array): The array to sort
-    
-##### Examples
-
-```js
-const array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
-bl.selectionSort(array);
-console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
-```
-
-***
-
-#### insertionSort(array)
-
-    Sort the array by insertion sort
-
-##### Arguments
-
-    1. array (array): The array to sort 
-
-##### Examples
-
-```js
-const array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
-bl.insertionSort(array);
-console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
-```
-
-***
-
-#### newArr(length, element)
+#### bl.createArray(length, element)
    
     Create an array filled with identical elements
 
@@ -189,35 +95,13 @@ console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
 
 ##### Examples
 ```js
-const array = bl.newArr(3, new String());
+const array = bl.createArray(3, new String());
 console.log(array); // (3) [String, String, String]
 ```
 
 ***
 
-#### lastElem(array)
-
-    Find last array element
-
-##### Arguments
-
-    1. array (array): The array to find last element
-     
-##### Returns
-    
-    (all types): Returns last array element
-    
-##### Examples    
-
-```js
-const array = [4, 5, 0, 1, 7];
-const elem = bl.lastElem(array);
-console.log(elem); // 7
-```
-
-***
-
-#### operArr(array1, array2, operation)
+#### bl.arrayOperations(array1, array2, operation)
 
     The function performs mathematical operations on arrays. The result is written to the first array.
    
@@ -241,7 +125,124 @@ console.log(array1); // (5) [36, 20, 0, 1, 14]
 
 ***
 
-#### factorial(number)
+#### bl.lastElem(array)
+
+    Find last array element
+
+##### Arguments
+
+    1. array (array): The array to find last element
+     
+##### Returns
+    
+    (all types): Returns last array element
+    
+##### Examples    
+
+```js
+const array = [4, 5, 0, 1, 7];
+const elem = bl.lastElem(array);
+console.log(elem); // 7
+```
+
+***
+
+#### bl.sortArray(array)
+
+    Sort array
+
+##### Arguments
+
+    1. array (array): The array to sort
+    
+##### Examples
+
+```js
+const array = [5, 1, 3, 0, 3, 5, 9, 8, 1, 2];
+bl.sortArr(array);
+console.log(array); // (10) [0, 1, 1, 2, 3, 3, 5, 5, 8, 9]
+```
+
+***
+
+#### bl.bubbleSort(array)
+
+    Sort the array by bubble sort
+
+##### Arguments
+
+    1. array (array): The array to sort
+    
+##### Examples
+
+```js
+const array = [-1, 5, 8, 0, -6, -5, 3, 4, 1, 0];
+bl.bubbleSort(array);
+console.log(array); // (10) [ -6, -5, -1, 0, 0, 1, 3, 4, 5, 8 ]
+````
+
+***
+
+#### bl.selectionSort(array)
+
+    Sort the array by selection sort
+
+##### Arguments
+
+    1. array (array): The array to sort
+    
+##### Examples
+
+```js
+const array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
+bl.selectionSort(array);
+console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
+```
+
+***
+
+#### bl.insertionSort(array)
+
+    Sort the array by insertion sort
+
+##### Arguments
+
+    1. array (array): The array to sort 
+
+##### Examples
+
+```js
+const array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
+bl.insertionSort(array);
+console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
+```
+
+***
+
+#### bl.interpolationSearch(element, array)
+
+    Find element index
+
+##### Arguments
+
+    1. array (array): The sorted array to find element index
+    2. element (number):  Element to find index
+    
+##### Returns
+    
+    The function returns element index or -1
+
+##### Examples
+
+```js
+const array = [3, 5, 9, 11, 15, 98, 505];
+const index = bl.interpolationSearch(9, array);
+console.log(index); // 2
+```
+
+***
+
+#### bl.factorial(number)
 
     Calculate the factorial of numbers
     
@@ -262,7 +263,7 @@ console.log(num); // 120
 
 ***
 
-#### fibonacci(number)
+#### bl.fibonacci(number)
 
     Calculate the fibonacci number
     
@@ -283,7 +284,7 @@ console.log(num); // 1597
 
 ***
 
-#### RLE(str)
+#### bl.RLE(str)
 
     Compress string
     
@@ -305,7 +306,7 @@ console.log(compressedStr); // A4B3C2X1Y1Z1D4E3F3A6B5
 
 ***
 
-#### upperFirst(string)
+#### bl.upperFirst(string)
 
     Translate to upper case first string letter
     
@@ -322,4 +323,34 @@ console.log(compressedStr); // A4B3C2X1Y1Z1D4E3F3A6B5
 ```js
 const str = 'hello, world!'
 console.log(bl.upperFirst(str)); // Hello, World!;
+```
+
+***
+
+#### This function workable only in browser!
+#### bl.measureTime(callback, [args1], [args2], ...) 
+
+    Measure function execution time
+    
+##### Arguments
+
+    1. callback (function): The function whose time is to be measured
+    2. [args1], [args2], ... : Callback function arguments
+    
+##### Returns
+
+    (object|number): If the callback function returns a value, 
+                     the measureTime function returns object {time: number, answer: *}
+                     else returns only  function execuite time
+
+##### Examples
+
+```js
+const answer = measureTime(bestLibrary.bubbleSort, [5, 9, 1, 2, -5]);
+console.log(answer); // 0.14999999984866008;
+```
+
+```js
+const answer = measureTime(bestLibrary.fibonacci, 40);
+console.log(answer); // {time: 1181.5399999995861, answer: 63245986}
 ```
