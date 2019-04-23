@@ -10,13 +10,17 @@
      * @return {number} Random number
      * */
     function randomNum(x, y, z = undefined) {
+
         if (arguments.length === 1) {
             return Math.round(Math.random() * x);
         }
-        let randomNumber = Math.round((Math.random() * (y - x) + x));
+
         if (y < x) {
             throw new Error('maximum less than minimum');
         }
+
+        let randomNumber = Math.round((Math.random() * (y - x) + x));
+
         while (randomNumber === z) {
             randomNumber = Math.round((Math.random() * (y - x) + x));
         }
@@ -60,6 +64,11 @@
      * @return {array} New array
      */
     function createArray(amount, elem) {
+
+        if(typeof amount !== 'number') {
+            throw new TypeError(`${amount} is not a number`);
+        }
+
         let array = [];
         for (var i = 0; i < amount; i++) {
             array.push(elem);
