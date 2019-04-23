@@ -13,6 +13,7 @@ This library provides a set of functions that facilitate the work in Javascript.
 + bubbleSort
 + selectionSort
 + insertionSort
++ binarySearch
 + interpolationSearch
 + factorial
 + fibonacci
@@ -215,6 +216,29 @@ console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
 const array = [5, 1, -3, -3, 3, -5, 6, 8, 1, 0];
 bl.insertionSort(array);
 console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
+```
+
+***
+
+#### bl.binarySearch(element, array)
+
+    Find element index
+
+##### Arguments
+
+    1. array (array): The sorted array to find element index
+    2. element (number):  Element to find index
+    
+##### Returns
+    
+    The function returns element index or -1
+
+##### Examples
+
+```js
+const array = [-4, 0, 8, 9, 11];
+const index = bl.binarySearch(0, array);
+console.log(index); // 1
 ```
 
 ***

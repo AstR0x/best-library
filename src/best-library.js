@@ -209,7 +209,52 @@
      * @param {array} array Array to search
      * @returns {number}
      */
+    function binarySearch(element, array) {
+
+        if(!Array.isArray(array)) {
+            throw new TypeError(`${array} is not array`);
+        }
+
+        if(typeof element !== 'number') {
+            throw new TypeError(`${element} is not a number`);
+        }
+
+        let left = 0;
+        let right = array.length - 1;
+
+        while(left <= right) {
+            let mid = Math.floor((right + left) / 2);
+
+            if (element > array[mid]) {
+                left = mid + 1;
+            } else if (element < array[mid]) {
+                right = mid - 1;
+            } else {
+                return mid;
+            }
+        }
+
+        return -1;
+    }
+
+
+    /**
+     * Find element index
+     *
+     * @param {number} element Element to find
+     * @param {array} array Array to search
+     * @returns {number}
+     */
     function interpolationSearch(element, array) {
+
+        if(!Array.isArray(array)) {
+            throw new TypeError(`${array} is not array`);
+        }
+
+        if(typeof element !== 'number') {
+            throw new TypeError(`${element} is not a number`);
+        }
+
         let diff;
         let left = 0;
         let right = array.length - 1;
@@ -311,6 +356,11 @@
      * @returns {{answer: *, time: number}|number} Object consist of execution time and callback function return
      */
     function measureTime(callback) {
+
+        if(typeof callback !== 'function') {
+            throw new TypeError(`${arguments[0]} is not a function`);
+        }
+
         const args = [...arguments].slice(1);
 
         const startTime = performance.now();
@@ -335,6 +385,7 @@
         bubbleSort,
         selectionSort,
         insertionSort,
+        binarySearch,
         interpolationSearch,
         factorial,
         fibonacci,

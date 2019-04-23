@@ -130,7 +130,15 @@ describe('insertionSort', function() {
 });
 
 
-describe('interpolationSort', function () {
+describe('binarySearch', function () {
+    it('element found right', function () {
+        const array = [-5, 0, 1, 94, 105];
+        assert.equal(bestLibrary.binarySearch(105, array), 4);
+    });
+});
+
+
+describe('interpolationSearch', function () {
   it('element found right', function () {
     const array = [3, 15, 99, 109, 110, 505];
     assert.equal(bestLibrary.interpolationSearch(99, array), 2);
