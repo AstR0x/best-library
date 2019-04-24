@@ -6,3 +6,6 @@ test
 
 # build tools
 .travis.yml
+
+#idea folder
+.idea

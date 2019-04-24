@@ -1,11 +1,12 @@
 {
-  "name": "best-library",
+  "name": "bestka",
   "version": "0.2.0",
   "description": "The best JavaScript library",
-  "main": "dist/best-library",
+  "main": "dist/best-library.min.js",
   "scripts": {
     "test": "mocha test/spec/best-library-spec.js",
     "build": "mkdir dist && uglifyjs ./src/best-library.js > ./dist/best-library.min.js",
+
     "preversion": "npm test",
     "version": "npm run build"
   },

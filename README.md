@@ -21,11 +21,17 @@ This library provides a set of functions that facilitate the work in Javascript.
 + upperFirst
 + measureTime
 
-### Library connection.
+### Installation
 
-```js
-const bl = require('*/best-library.js');
+```terminal
+$ npm i best-library
 ```
+
+##### In Node.js:
+```js
+const bl = require('best-library');
+```
+
 *** *** ***
 
 #### bl.randomNum([min = 0], max)
