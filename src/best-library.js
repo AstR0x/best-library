@@ -2,12 +2,12 @@
 
 
     /**
-     * Get random number
+     * Get the random number
      *
-     * @param {number} x Bottom bound
-     * @param {number} y  Upper bound
+     * @param {number} x The bottom bound
+     * @param {number} y  The upper bound
      * @param {number} z A number that should not appear
-     * @return {number} Random number
+     * @return {number} The random number
      * */
     function randomNum(x, y, z = undefined) {
 
@@ -29,22 +29,22 @@
 
 
     /**
-     * Get array of random numbers
+     * Get the array of random numbers
      *
-     * @param {number} amount Amount of array elements
-     * @param {number} max Upper bound
-     * @param {number} min Bottom bound
+     * @param {number} size The size of an array
+     * @param {number} max The upper bound
+     * @param {number} min The Bottom bound
      * @param {boolean} unique Unique numbers
-     * @return {array} array Array of random numbers
+     * @return {array} array The array of random numbers
      */
-    function randomArray(amount, min, max, unique = false) {
-        if (amount > max - min && unique == true) {
-            throw new Error('amount more than difference of maximum and minimum');
+    function randomArray(size, min, max, unique = false) {
+        if (size > max - min && unique == true) {
+            throw new Error('size more than difference of maximum and minimum');
         }
-        let arrOfRUN = [];
+        const arrOfRUN = [];
         let randomNumber;
 
-        for (let i = 0; i < amount;) {
+        for (let i = 0; i < size;) {
             randomNumber = randomNum(min, max);
             if (arrOfRUN.indexOf(randomNumber) !== -1 && unique == true) {
                 continue;
@@ -57,20 +57,15 @@
 
 
     /**
-     * Create new array
+     * Create a new array
      *
-     * @param {number} amount Amount of new array
-     * @param {number} elem Element that need to fill the array
-     * @return {array} New array
+     * @param {number} size The size of the new array
+     * @param {number} elem The element that need to fill the array
+     * @return {array} A new array
      */
-    function createArray(amount, elem) {
-
-        if(typeof amount !== 'number') {
-            throw new TypeError(`${amount} is not a number`);
-        }
-
-        let array = [];
-        for (var i = 0; i < amount; i++) {
+    function createArray(size, elem) {
+        const array = [];
+        for (let i = 0; i < size; i++) {
             array.push(elem);
         }
         return array;
@@ -80,12 +75,12 @@
     /**
      * Perform an operation on two arrays
      *
-     * @param {array} arr1 Array that will change
-     * @param {array} arr2 Second array
-     * @param {string} oper Operation that will be performed
+     * @param {array} arr1 The array that will change
+     * @param {array} arr2 The second array
+     * @param {string} operation The operation that will be performed
      */
-    function arrayOperations(arr1, arr2, oper) {
-        switch (oper) {
+    function arrayOperations(arr1, arr2, operation) {
+        switch (operation) {
             case "+":
                 for (let i = 0; i < arr1.length; i++) {
                     arr1[i] += arr2[i];
@@ -117,9 +112,9 @@
 
 
     /**
-     * Get last element of array
+     * Get the last element of an array
      *
-     * @param {array} array Array to search
+     * @param {array} array The array to search
      * @return {*}
      */
     function lastElem(array) {
@@ -128,9 +123,9 @@
 
 
     /**
-     * Sort array of numbers
+     * Sort the array of numbers
      *
-     * @param {array} array Array to sort
+     * @param {array} array The array to sort
      */
     function sortArray(array) {
         array.sort((a, b) => {
@@ -141,9 +136,9 @@
 
 
     /**
-     * Sort array of numbers
+     * Sort an array of numbers
      *
-     * @param {array} array Array to sort
+     * @param {array} array The Array to sort
      */
     function bubbleSort(array) {
         let isSorted = false;
@@ -167,12 +162,12 @@
 
 
     /**
-     * Sort array of numbers
+     * Sort an array of numbers
      *
-     * @param {array} array Array to sort
+     * @param {array} array The array to sort
      */
     function selectionSort(array) {
-        for (i = 0; i < array.length - 1; i++) {
+        for (let i = 0; i < array.length - 1; i++) {
             let lowestValueIndex = i;
 
             for (j = i + 1; j < array.length; j++) {
@@ -191,9 +186,9 @@
 
 
     /**
-     * Sort array of numbers
+     * Sort an array of numbers
      *
-     * @param array {array} Array to sort
+     * @param array {array} The Array to sort
      */
     function insertionSort(array) {
         for (let i = 1; i < array.length; i++) {
@@ -214,20 +209,11 @@
     /**
      * Find element index
      *
-     * @param {number} element Element to find
-     * @param {array} array Array to search
-     * @returns {number}
+     * @param {array} array The array to search
+     * @param {number} element The element to find
+     * @returns {number} The element index
      */
-    function binarySearch(element, array) {
-
-        if(!Array.isArray(array)) {
-            throw new TypeError(`${array} is not array`);
-        }
-
-        if(typeof element !== 'number') {
-            throw new TypeError(`${element} is not a number`);
-        }
-
+    function binarySearch(array, element) {
         let left = 0;
         let right = array.length - 1;
 
@@ -250,20 +236,11 @@
     /**
      * Find element index
      *
-     * @param {number} element Element to find
-     * @param {array} array Array to search
+     * @param {array} array The array to search
+     * @param {number} element The element to find
      * @returns {number}
      */
-    function interpolationSearch(element, array) {
-
-        if(!Array.isArray(array)) {
-            throw new TypeError(`${array} is not array`);
-        }
-
-        if(typeof element !== 'number') {
-            throw new TypeError(`${element} is not a number`);
-        }
-
+    function interpolationSearch(array, element) {
         let diff;
         let left = 0;
         let right = array.length - 1;
@@ -292,10 +269,10 @@
 
 
     /**
-     * Get factorial of num
+     * Get an factorial of num
      *
      * @param {number} num
-     * @returns {number} factorial of num
+     * @returns {number} The factorial of num
      */
     function factorial(num) {
         if (num < 2) return 1;
@@ -304,10 +281,10 @@
 
 
     /**
-     * Get the nth Fibonacci number
+     * Get nth Fibonacci number
      *
-     * @param {number} num Calculated fibonacci number
-     * @returns {number} Fibonacci number
+     * @param {number} num The calculated fibonacci number
+     * @returns {number} The fibonacci number
      */
     function fibonacci(num) {
         if (num == 1) return 0;
@@ -320,13 +297,14 @@
     /**
      * String compression
      *
-     * @param {string} str String to compress
-     * @returns {string} Compressed string
+     * @param {string} str The string to compress
+     * @returns {string} The compressed string
      */
     function RLE(str) {
         let newStr = '';
         let last = str[0];
         let count = 1;
+
         for (let i = 1; i <= str.length; i++) {
             if (str[i] == last) {
                 count++;
@@ -343,12 +321,13 @@
     /**
      * Convert the first letter of a word to upper case
      *
-     * @param {string} str String to convert
-     * @returns {string} Converted string
+     * @param {string} str The string to convert
+     * @returns {string} The converted string
      */
     function upperFirst(str) {
-        let strArray = str.split('');
+        const strArray = str.split('');
         strArray[0] = strArray[0].toUpperCase();
+
         for (let i = 0; i < str.length - 1; i++) {
             if (strArray[i] === ' ') {
                 strArray[i + 1] = strArray[i + 1].toUpperCase();
@@ -362,16 +341,10 @@
      * Measure function execution time
      *
      * @param {function} callback The function whose time is to be measured
-     * @returns {{answer: *, time: number}|number} Object consist of execution time and callback function return
+     * @returns {{answer: *, time: number}|number} An object consist of execution time and callback function return
      */
     function measureTime(callback) {
-
-        if(typeof callback !== 'function') {
-            throw new TypeError(`${arguments[0]} is not a function`);
-        }
-
         const args = [...arguments].slice(1);
-
         const startTime = performance.now();
         const answer = callback(...args);
         const time = performance.now() - startTime;

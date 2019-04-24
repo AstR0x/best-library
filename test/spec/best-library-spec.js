@@ -47,7 +47,7 @@ describe("randomArray", function() {
 
 
 describe('createArray', function() {
-  it('array length is equal to the parameter "amount"', function() {
+  it('array length is equal to the parameter "size"', function() {
     const array = bestLibrary.createArray(10, new String());
     assert.equal(10, array.length);
   });
@@ -133,7 +133,7 @@ describe('insertionSort', function() {
 describe('binarySearch', function () {
     it('element found right', function () {
         const array = [-5, 0, 1, 94, 105];
-        assert.equal(bestLibrary.binarySearch(105, array), 4);
+        assert.equal(bestLibrary.binarySearch(array, 105), 4);
     });
 });
 
@@ -141,7 +141,7 @@ describe('binarySearch', function () {
 describe('interpolationSearch', function () {
   it('element found right', function () {
     const array = [3, 15, 99, 109, 110, 505];
-    assert.equal(bestLibrary.interpolationSearch(99, array), 2);
+    assert.equal(bestLibrary.interpolationSearch(array, 99), 2);
   });
 });
 

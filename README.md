@@ -34,8 +34,8 @@ const bl = require('*/best-library.js');
 
 ##### Arguments
 
-    1. [min = 0] (number): Left border of interval
-    2. max (number): Right border of interval 
+    1. [min = 0] (number): The lower bound of an interval
+    2. max (number): The upper bound of an interval 
 
 ##### Returns
 
@@ -54,15 +54,15 @@ const bl = require('*/best-library.js');
  
 ***
 
-#### bl.randomArray(amount, min, max, [unique = false])
+#### bl.randomArray(size, min, max, [unique = false])
 
     The function returns an array of random numbers
     
 ##### Arguments    
 
-    1. amount (number): Amount amount of array elements
-    2. min (number): Bottom border
-    3. max (number): Upper border
+    1. size (number): The Size of an array
+    2. min (number): The lower bound
+    3. max (number): The upper bound
     4. unique = false (boolean): If the variable === true, the function will return an array of unique numbers
     
 ##### Returns
@@ -108,8 +108,8 @@ console.log(array); // (3) [String, String, String]
    
 ##### Arguments
 
-    1. array1 (array): First array to perform operation
-    2. array2 (array): Second array to perform operation
+    1. array1 (array): The first array to perform operation
+    2. array2 (array): The second array to perform operation
     3. operation (string): The operation that is performed on arrays
     
 ##### Returns
@@ -220,14 +220,14 @@ console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
 
 ***
 
-#### bl.binarySearch(element, array)
+#### bl.binarySearch(array, element)
 
     Find element index
 
 ##### Arguments
 
-    1. array (array): The sorted array to find element index
-    2. element (number):  Element to find index
+    1. element (number):  The element to find index
+    2. array (array): The sorted array to find element index
     
 ##### Returns
     
@@ -237,20 +237,20 @@ console.log(array); // (10) [ -5, -3, -3, 0, 1, 1, 3, 5, 6, 8 ]
 
 ```js
 const array = [-4, 0, 8, 9, 11];
-const index = bl.binarySearch(0, array);
+const index = bl.binarySearch(array, 0);
 console.log(index); // 1
 ```
 
 ***
 
-#### bl.interpolationSearch(element, array)
+#### bl.interpolationSearch(array, element)
 
     Find element index
 
 ##### Arguments
 
-    1. array (array): The sorted array to find element index
-    2. element (number):  Element to find index
+     1. element (number):  The element to find index
+     2. array (array): The sorted array to find element index
     
 ##### Returns
     
@@ -260,7 +260,7 @@ console.log(index); // 1
 
 ```js
 const array = [3, 5, 9, 11, 15, 98, 505];
-const index = bl.interpolationSearch(9, array);
+const index = bl.interpolationSearch(array, 9);
 console.log(index); // 2
 ```
 
@@ -276,7 +276,7 @@ console.log(index); // 2
 
 ##### Returns
     
-    (number): Returns factorial of a number
+    (number): Returns the factorial of a number
 
 ##### Examples
 
@@ -297,7 +297,7 @@ console.log(num); // 120
 
 ##### Returns
     
-    (number): Returns nth fibonacci number
+    (number): Returns the nth fibonacci number
 
 ##### Examples
 
@@ -336,11 +336,11 @@ console.log(compressedStr); // A4B3C2X1Y1Z1D4E3F3A6B5
     
 ##### Arguments
 
-    1. string (string): String to modify  
+    1. string (string): The string to modify  
     
 ##### Returns
 
-    (string): Returns modify string
+    (string): Returns the modify string
 
 ##### Examples
 
