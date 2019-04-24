@@ -1,4 +1,8 @@
 #.idea folder
 .idea/
+
 #node_modules folder
 node_modules
+
+#build
+dist

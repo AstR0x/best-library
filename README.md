@@ -365,7 +365,7 @@ console.log(bl.upperFirst(str)); // Hello, World!;
 
     (object|number): If the callback function returns a value, 
                      the measureTime function returns object {time: number, answer: *}
-                     else returns only  function execuite time
+                     else returns only function execuite time
 
 ##### Examples
 
