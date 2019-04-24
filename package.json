@@ -1,12 +1,11 @@
 {
-  "name": "bestka",
+  "name": "best-library",
   "version": "0.2.0",
   "description": "The best JavaScript library",
   "main": "dist/best-library.min.js",
   "scripts": {
     "test": "mocha test/spec/best-library-spec.js",
     "build": "mkdir dist && uglifyjs ./src/best-library.js > ./dist/best-library.min.js",
-
     "preversion": "npm test",
     "version": "npm run build"
   },
@@ -22,9 +21,7 @@
   "homepage": "https://github.com/AstR0x/best-library#readme",
   "devDependencies": {
     "mocha": "^5.2.0",
+    "chai": "^4.2.0",
     "uglify-es": "^3.3.9"
-  },
-  "dependencies": {
-    "chai": "^4.2.0"
   }
 }
